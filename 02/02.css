@@ -1,49 +1,56 @@
 /* 전체선택자 */
-*{
-    padding:0px;
-    margin:0px;
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
-header ul{
-        background-color:green;
-        color : white;
-    }
-    
-h2[class]{
-    color:yellow;
+/* 조상자손선택자 */
+header ul {
+    background-color: green;
+    color: white;
 }
 
-    /* 클래스선택자 */
-    .g1{
-        /* 배경색과 글자색 */
-        background-color: blue;
-        color : white;
+/* 속성선택자 */
+h2[class] {
+    color: yellow;
+}
 
-        /* 가로와 세로 */
-        width: 50%;
-        height: 80px;
+/* 클래스선택자 */
+.g1 {
+    /* 배경색과 글자색 */
+    background-color: blue;
+    color: white;
 
-        /* 안쪽여백 */
-        padding : 20px;
+    /* 가로와 세로 */
+    width: 50%;
+    height: 80px;
 
-        /* 바깥여백 */
-        margin: 20px;
-    }
+    /* 안쪽여백 */
+    padding: 20px;
 
-    .g2{
-        background-color: red;
-        color : white;
-    }
+    /* 바깥여백 */
+    margin: 20px;
+}
+
+.g2 {
+    background-color: red;
+    color: white;
+}
 
 
-    /* 아이디선택자 */
-    #html {
-        background-color: blueviolet;
-        color : white;
-    }
-    footer > ul {
-        background-color: black;
-        color : white;
-    }
+/* 아이디선택자 */
+#html {
+    background-color: blueviolet;
+    color: white;
+}
 
-    width: 100px
+/* 부모자식선택자 */
+footer>ul {
+    background-color: black;
+    color: white;
+}
+
+/* 그룹선택자 */
+#s1, s2{
+    background-color:gainsboro;
+}
