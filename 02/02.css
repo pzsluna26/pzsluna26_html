@@ -1,0 +1,49 @@
+/* 전체선택자 */
+*{
+    padding:0px;
+    margin:0px;
+}
+
+header ul{
+        background-color:green;
+        color : white;
+    }
+    
+h2[class]{
+    color:yellow;
+}
+
+    /* 클래스선택자 */
+    .g1{
+        /* 배경색과 글자색 */
+        background-color: blue;
+        color : white;
+
+        /* 가로와 세로 */
+        width: 50%;
+        height: 80px;
+
+        /* 안쪽여백 */
+        padding : 20px;
+
+        /* 바깥여백 */
+        margin: 20px;
+    }
+
+    .g2{
+        background-color: red;
+        color : white;
+    }
+
+
+    /* 아이디선택자 */
+    #html {
+        background-color: blueviolet;
+        color : white;
+    }
+    footer > ul {
+        background-color: black;
+        color : white;
+    }
+
+    width: 100px
