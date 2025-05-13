@@ -1,0 +1,67 @@
+header,main {
+    width: 80%;
+    border: 1px solid;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+}
+
+header {
+    background-color: blue;
+    color :aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+footer > ul {
+    width: 80%;
+    border: 1px solid;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: blue;
+    color:white;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+
+footer a:hover {
+    background-color: brown;
+}
+
+#int {
+    background-color: blue;
+
+}
+
+main a {
+    text-decoration: none;
+}
+
+main li {
+    border: 1px dotted gainsboro;
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+main li:hover {
+    background-color: aliceblue;
+}
+
+main ol{
+    width: 80%;
+    margin-left: 5%;
+}
+
+main {
+    height: 70vh;
+}
