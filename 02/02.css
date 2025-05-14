@@ -43,7 +43,6 @@ article > p {
     font-size: 30;
     font-weight: 400;
     
-
 }
 
 article {
@@ -131,4 +130,14 @@ footer{
     font-size: small;
     justify-content: center;
     flex-direction: column;
+    
+}
+
+/* 미디어쿼리(반응형 웹 처리방식)
+스크린: 1024보다 작은 윈도우사이즈면, 어떻게 할꺼냐  */
+@media screen and (max-width:1024px) {
+    body {
+    width : 100%;
+    margin-left :0%;
+}
 }

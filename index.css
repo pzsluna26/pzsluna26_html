@@ -5,17 +5,18 @@ header,main {
     margin-top: 10px;
     display: flex;
     justify-content: left;
+    border-radius: 15px;
 }
 
 header {
-    background-color: blue;
+    background-color: rgb(134, 134, 221);
     color :aliceblue;
     display: flex;
     justify-content: center;
 }
 
 footer > ul {
-    width: 80%;
+    width: 78%;
     border: 1px solid;
     margin-left: 10%;
     margin-top: 10px;
@@ -28,7 +29,7 @@ footer > ul {
 footer a {
     text-decoration: none;
     padding: 5px 10px;
-    background-color: blue;
+    background-color: rgb(134, 134, 221);
     color:white;
     border-radius: 5px;
     margin: 0px 5px;
@@ -65,3 +66,4 @@ main ol{
 main {
     height: 70vh;
 }
+
