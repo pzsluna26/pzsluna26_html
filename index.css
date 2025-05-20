@@ -1,14 +1,26 @@
-header,main {
+header,main,footer {
+    /*너비조정
+    테두리 만들기 굵기 조정
+    왼쪽 여백
+    위 여백
+    내용물 가로정렬
+    간격 정렬(가운데)
+    테두리 모서리 둥글게
+    */
     width: 80%;
     border: 1px solid;
     margin-left: 10%;
     margin-top: 10px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     border-radius: 15px;
 }
 
 header {
+    /*배경색
+    폰트색상
+    내용물 가로정렬
+    간격 정렬 가운데*/
     background-color: rgb(134, 134, 221);
     color :aliceblue;
     display: flex;
@@ -16,32 +28,55 @@ header {
 }
 
 footer > ul {
-    width: 78%;
-    border: 1px solid;
+    /*너비 조정
+    테두리 모서리 둥글게
+    왼쪽 여백
+    위 여백
+    가로정렬
+    간격정렬 왼쪽 끝
+    li 점 제거
+    안쪽 여백 조정 */
+    width: 100%;
+    border-radius: 10px;
     margin-left: 10%;
     margin-top: 10px;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     list-style: none;
     padding: 10px;
 }
 
 footer a {
+    /*배경색상
+    폰트색상
+    테두리둥글게
+    폰트 굵기
+    안쪽여백
+    하이퍼링크 밑줄제거
+    애니메이션*/
+    background-color: rgb(134, 134, 221);  
+    color: white;               
+    border-radius: 10px;         
+    font-weight: bold;  
+    padding: 10px 20px;  
     text-decoration: none;
-    padding: 5px 10px;
-    background-color: rgb(134, 134, 221);
-    color:white;
-    border-radius: 5px;
-    margin: 0px 5px;
+    transition: 0.3s;     /* 애니메이션 부드럽게 */
 }
+
 
 footer a:hover {
-    background-color: brown;
+    /* 커서 올렸을 때 색상변경 */
+    background-color: beige;
 }
 
-#int {
-    background-color: blue;
+main {
+    /*메인 세로너비 지정*/
+    height: 70vh;
+}
 
+#inf {
+    /*버튼 고정색상*/
+  background-color: green;
 }
 
 main a {
@@ -63,7 +98,5 @@ main ol{
     margin-left: 5%;
 }
 
-main {
-    height: 70vh;
-}
+
 
