@@ -1,0 +1,50 @@
+.nlist , .btArea{
+    width: 80%;
+    padding: 10px;
+    display: flex; 
+    justify-content: content;
+    align-items: center;
+    
+}
+
+.nlist {
+    height: 80px;
+}
+
+/*flex: 정렬, margin: 여백, font-weigh: 볼드체 */
+.nlist > span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;  
+    font-weight: bold;
+
+    /*bg없애기 색깔 나오게*/
+
+    color:white;
+    margin: 5px;
+}
+
+/* 각 동그라미 색상 다르게 만들기 */
+.sp0{
+    background:plum;
+}
+.sp1{
+    background:red;
+}
+.sp2{
+    background:darkorange;
+}
+.sp3{
+    background:greenyellow;
+}
+.sp4{
+    background:skyblue;
+}
+#spPlus{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
