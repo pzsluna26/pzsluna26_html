@@ -1,0 +1,96 @@
+form {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap; /*넘치면 밑으로 내려감*/
+    padding: 10px; /*안쪽으로 들어옴*/
+    border: 1px dotted gray;
+}
+
+.mdiv{
+    width: 44%;
+    height: 50px;
+    margin-left: 30px;
+}
+
+.mdiv > select {
+    width: 80%;
+}
+
+
+.mdiv > input {
+    width: 60%;
+}
+
+.mdiv > input, .mdiv > select {
+    height: 40px;
+}
+
+/*속성에 리드온리가 들어가는게 있으면 색깔 바꿔줘*/
+[readonly]{
+    background: beige;
+}
+
+
+
+
+
+
+/*//////////////////////아래는 내css//////////////////////*/
+header{
+    background: rgb(134, 134, 221);
+    color: white;
+    width: 80%;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+main{
+    width: 80%;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    height: 60vh;
+}
+
+footer{
+    width: 80%;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 15px;
+    
+}
+
+ul {
+    /*ul 땡땡이 제거*/
+    list-style: none;
+}
+
+footer a {
+    /*배경색상
+    폰트색상
+    테두리둥글게
+    폰트 굵기
+    안쪽여백
+    하이퍼링크 밑줄제거
+    */
+    background-color: rgb(134, 134, 221);  
+    color: white;               
+    border-radius: 10px;         
+    font-weight: bold;  
+    margin-right: 20px;
+    padding: 10px 20px;  
+    text-decoration: none;
+   
+}

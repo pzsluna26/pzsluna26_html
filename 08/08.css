@@ -1,0 +1,58 @@
+header{
+    background: rgb(134, 134, 221);
+    color: white;
+    width: 80%;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+main{
+    width: 80%;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    height: 60vh;
+}
+
+footer{
+    width: 80%;
+    border: 1px solid gray;
+    margin-left: 10%;
+    margin-top: 10px;
+    display: flex;
+    text-decoration: none;
+    justify-content: flex-end;
+    border-radius: 15px;
+}
+
+footer a {
+    /*배경색상
+    폰트색상
+    테두리둥글게
+    폰트 굵기
+    안쪽여백
+    하이퍼링크 밑줄제거
+    애니메이션*/
+    background-color: rgb(134, 134, 221);  
+    color: white;               
+    border-radius: 10px;         
+    font-weight: bold;  
+    margin: 3px;
+    padding: 10px 20px;  
+    text-decoration: none;
+    transition: 0.3s;     /* 애니메이션 부드럽게 */
+}
+
+footer a:hover {
+    /* 커서 올렸을 때 색상변경 */
+    background-color: beige;
+}

@@ -1,9 +1,11 @@
-//회문확인버튼 onclick, 입력창에 어떻게 값을 가져오느냐(.value)-input
+
+    /*회문확인버튼
+     onclick, 입력창에 어떻게 값을 가져오느냐(.value)-input*/
     const check1 = (e) => {
     //e.preventDefault();
     console.log('check1');
 
-    //입력창에 토마토 불러오기 
+    //input 창(입력창)에 토마토 불러오기 
     let txt1 = document.getElementById("txt1").value ;
 
     //문자열에서 모든 공백 제거 (소주 만 병만 주소->오류:공백위치 달라서)
