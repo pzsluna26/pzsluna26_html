@@ -30,6 +30,13 @@ form {
     background: beige;
 }
 
+[for =txt1]{
+    color:brown;
+}
+
+[for =txt2]{
+    color:blue;
+}
 
 
 

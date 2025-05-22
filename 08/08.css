@@ -23,6 +23,7 @@ main{
     height: 60vh;
 }
 
+
 footer{
     width: 80%;
     border: 1px solid gray;
@@ -55,4 +56,13 @@ footer a {
 footer a:hover {
     /* 커서 올렸을 때 색상변경 */
     background-color: beige;
+}
+
+
+[for =txt1]{
+    color:brown;
+}
+
+[for =txt2]{
+    color:blue;
 }
