@@ -23,28 +23,27 @@
 
     /*bg없애기 색깔 나오게*/
 
-    color:white;
+    color:rgb(98, 91, 91);
     margin: 5px;
 }
 
 /* 각 동그라미 색상 다르게 만들기 */
 .sp0{
-    background:plum;
+    background-color: rgb(251, 246, 150);
 }
 .sp1{
-    background:red;
+    background-color: rgb(214, 251, 150);
 }
 .sp2{
-    background:darkorange;
+    background-color: rgb(169, 150, 251);
 }
 .sp3{
-    background:greenyellow;
+    background-color: rgb(251, 150, 170);
 }
 .sp4{
-    background:skyblue;
+    background-color: rgb(150, 224, 251);
 }
-#spPlus{
-    color: black;
+.spPlus{
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
 }
