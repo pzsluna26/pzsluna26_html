@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const bt = document.querySelector(".row > button") ;
   const msg = document.querySelector("#msg") ;
   let arr = [0,0,0,0,0,0,0,0,1] ;
+  //상태표시기
   let flag = false ; 
   let cnt = 0;
 
