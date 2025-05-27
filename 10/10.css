@@ -1,0 +1,29 @@
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0px;
+
+}
+.col {
+    width: 80px;
+    height:80px;
+    border: 1px solid gray;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row > button{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:10px;
+    width:100px;
+}
+
+p{
+    font-size: large;
+    color: black;
+}
