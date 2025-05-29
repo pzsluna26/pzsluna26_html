@@ -1,0 +1,35 @@
+.mvul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.muvl > li {
+    display:flex;
+    background-color: blueviolet;
+}
+
+.spRank{
+    display: inline-flex; /*위드하고 하이 가질수있음*/
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 2px;
+}
+
+/*리스트 글자커서색깔변경*/
+.spMv:hover {
+    color:blueviolet;
+}
+
+/*리스트 배경커서색깔변경*/
+li:hover{
+    color:rgb(134, 134, 221);
+}
