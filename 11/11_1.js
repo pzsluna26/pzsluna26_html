@@ -1,62 +1,101 @@
-/*어제 날짜 지정하고 콘솔에 찍기*/
-const yesterday = () =>{
-    let yday = new Date();
-    yday.setDate(yday.getDate() -1) //어제날짜
-    return yday.toISOString().slice(0,10); //년월일 추출
+/*포스터 찾는 링크
+https://api.themoviedb.org/3/search/movie?api_key=b42483d9af611184a5e87b9980e11075&query=하이파이브 */
 
-    // let y = yday.getFullYear(); //연도4자리
-    // let m = yday.getMonth() +1 //월
-    // m = m < 10 ? '0'+ m : m; //m이 19보다 작으면 0+m,그렇지 않으면m
-    // let d = yday.getDate(); //일
-    // d = d < 10 ? '0'+ d : d;
-    // return y+m+d;
+/**https://image.tmdb.org/t/p/w500/3vRgeb0cARTebM8cbDXogGhOyit.jpg*/
+
+
+
+
+const yesterday = () => {
+  let yday = new Date() ;
+  yday.setDate(yday.getDate() - 1) ; //어제 날짜
+
+  return yday.toISOString().slice(0, 10);
+
+  // let y = yday.getFullYear() ; //연도4자리
+  // let m = yday.getMonth() + 1 ; //월 
+  // m = m < 10 ? '0' + m : m ;
+
+  // let d = yday.getDate() ; //일ㅇ
+  // d = d < 10 ? '0' + d : d ;
+  
+  // return y+String(m).padStart(2, '0')+String(d).padStart(2,'0') ;
 }
 
-const getMvList = (dt, ul) => {
-    const url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=581023657f7becce67c0cf9e98272f98&targetDt="+dt;
-      
-    console.log(url)
+const getPoster = (mvNm) => {
+  console.log("getPoster" , mvNm);
+  const tmdbApi = "b42483d9af611184a5e87b9980e11075" ;
+  let url = `https://api.themoviedb.org/3/search/movie?api_key=${tmdbApi}&query=${mvNm}` ;
+  const poster = document.querySelector(".poster") ;
 
-fetch(url) 
- .then(resp => resp.json()) 
- .then(data => {
-    const mvList = data.boxOfficeResult.dailyBoxOfficeList.map((item)=>
-    
-                               /*콘솔에 출력: console.log(item.movieNm) );*/
-                               /*브라우저에 출력(3번은 순위등락-삼항연산)*/ 
-                                `<li>
-                                    <span class="spRank">${item.rank}</span>
-                                    <span class="spMv">${item.movieNm}</span>
-                                    
-                                    ${parseInt(item.rankInten)}
-                                </li>`);
-    let tags=mvList.join('');
-    ul.innerHTML=tags;
-}) 
- .catch(err => console.log(err));
+  fetch(url)
+    .then(resp => resp.json())
+    .then(data => poster.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${data.results[0].poster_path}" />`) 
+    .catch(err => console.log(err)) ;
+
+  
+}
+const getMvList = (dt, ul, gubun) => {
+  console.log("dt=", dt) 
+  const apikey = "2a350cfbca6c428eb04c71e21cc681e7" 
+
+  let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${apikey}&targetDt=${dt}`;
+  
+  if (gubun == "r2") {
+    url = `${url}&multiMovieYn=N`
+  } else if (gubun == "r3") {
+    url = `${url}&multiMovieYn=Y`
+  } 
+  
+  // console.log(url)
+  fetch(url) 
+  .then(resp => resp.json())
+  .then(data => {
+    const dailyBoxOfficeList = data.boxOfficeResult.dailyBoxOfficeList ;
+    console.log(dailyBoxOfficeList)
+    const mvList = dailyBoxOfficeList.map((item) => {
+           const mv = encodeURIComponent(item.movieNm);
+           return `<li onClick=getPoster("${mv}")>
+                <span class="spRank">${item.rank}</span> 
+                <span class="spMv">${item.movieNm}</span>
+                ${parseInt(item.rankInten) > 0 
+                  ? '<span class="spR"><i class="fa-solid fa-arrow-up"></i>' + Math.abs(item.rankInten) + "</span>"
+                  : parseInt(item.rankInten) < 0 
+                    ?'<span class="spB"><i class="fa-solid fa-arrow-down"></i>' + Math.abs(item.rankInten) + "</span>"
+                    :'<i class="fa-solid fa-minus sp"></i>'
+                }
+            </li>` }
+    ) ;
+    let tags = mvList.join('') ;
+     
+    ul.innerHTML = tags ;                              
+     
+  })
+  .catch(err => console.log(err)) 
+  ;
 }
 
-/*날짜를 변경하면 그 날짜의 영화 랭킹 나오게 만들기*/
 document.addEventListener("DOMContentLoaded", ()=>{
-    const ul = document.querySelector("main > ul");  
-    const dtIn = document.querySelector("#dt");
-    dtIn.setAttribute("max",yesterday()); //디폴트로 어제까지만 날짜 잡을 수 있음
-    
-    dtIn.value = yesterday(); 
-    getMvList(dtIn.value.replaceAll('-',''), ul);
-    console.log(yesterday())
+  const ul = document.querySelector("main ul") ;
+  const dtIn = document.querySelector("#dt") ;
+  const bt = document.querySelector(".divRadio > button")
+  dtIn.setAttribute("max", yesterday()) ;
 
-    dtIn.addEventListener("change",() => {
-        getMvList(dtIn.value.replaceAll('-',''), ul);
-     });
+  dtIn.value = yesterday() ; 
+  getMvList(dtIn.value.replaceAll('-',''), ul) ;
+  console.log(yesterday())
+
+  dtIn.addEventListener("change" , () => { 
+    getMvList(dtIn.value.replaceAll('-',''), ul, "") ;
+  });
+  
+  bt.addEventListener("click" , (e)=>{
+    e.preventDefault();
+    const gubun = document.querySelector("[type=radio]:checked").value ;
+    document.querySelector(".poster").innerHTML = "" ; 
+    getMvList(dtIn.value.replaceAll('-',''), ul, gubun) ;
+  });
 });
 
-/*날짜를 변경하면, 그 날짜의 영화 랭킹과 랭킹등락 나오게 만들기*/
-document.addEventListener("DOMContentLoaded", ()=>{
-function a(ud) {
-  if (ud > 0) return ud;
-  return ;
-}
-});
 
- 
+/*영화진흥원 영화상세정보 인터페이스에서 활용해서 연습해보기 */
