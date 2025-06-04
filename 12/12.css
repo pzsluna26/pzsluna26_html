@@ -1,0 +1,110 @@
+#pMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.formDiv {
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+    width:80%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+button {
+    width:100px;
+    height: 40px;
+    margin-left: 5px; 
+}
+
+.content{
+    width: 80%;
+    height: 50vh;
+    padding: 10px;
+    overflow-y: auto;
+    border: 1px solid red;
+    border-radius: 20px;
+    display: flex;
+    justify-content: start; /*row 일때, 가로방향(주축)정렬*/
+    align-items: start; /*row 일떼, 세로방향(주축) 정렬*/
+    flex-wrap:wrap; /*Flex 박스 안의내용(아이템들)이 자동으로줄바꿈(wrap)*/
+    
+}
+
+.card{
+    width: 30%;
+    height:190px;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    margin: 5px;
+}
+
+/*cardImg
+1. width: 100%;
+   : cardImg가 부모 요소(.card)의 가로 폭을 100% 꽉 채우도록 한다는 뜻이야.
+2. height: 120px;
+   : 높이를 고정해서 120픽셀로 만든다.
+     이렇게 하면 모든 카드의 사진 영역이 같은 높이가 되어 디자인이 일정해져.
+3. overflow: hidden;
+   :.cardImg 박스를 벗어나는 내용(예: 이미지의 일부분)이 있으면 안 보이게 잘라버린다.
+    그래서 사진이 지정된 크기에서 넘치거나 삐져나오지 않게 깔끔하게 잘린다.
+4. border-radius: 20px 20px 0 0;
+    모서리를 둥글게 만든다.
+    위쪽 왼쪽, 위쪽 오른쪽 모서리만 둥글게(20px) 처리해서 카드 모양이 부드럽고 예뻐진다.
+    아래쪽은 모서리를 둥글게 안해서 카드 전체 디자인과 맞춘 거야.
+    */
+.cardImg {
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+/*cardImg img
+1. width: 100%; height: 100%;
+   : 이미지가 부모인 .cardImg 박스의 가로/세로 크기와 똑같이 맞춰진다는 뜻!
+    그래서 이미지가 박스 전체를 꽉 채우도록 만든다.
+2. object-fit: cover;
+   : 이게 핵심!
+    이미지 비율(가로세로 비율)을 유지하면서 부모 박스를 가득 채운다.
+    단, 비율을 유지하다 보니 이미지가 일부 잘릴 수도 있다.
+    (예: 세로가 너무 길면 좌우가 잘릴 수도 있고, 가로가 너무 길면 위아래가 잘릴 수도 있다)
+    그래서 사진이 찌그러지지 않고 자연스럽게 보인다.
+3. display: block;
+    : 이미지는 기본적으로 inline 요소라서 밑에 작은 여백(공백)이 생길 수 있어.
+    이걸 없애려고 block으로 바꿔서 빈 공간 없이 딱 맞게 만든다.*/
+.cardImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.cardDiv{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.sp1, .sp2{
+    display: flex;
+}
+
+.sp1{
+    font-weight: bold;
+}
+
+.sp2{
+    font-size: 12px;
+}
