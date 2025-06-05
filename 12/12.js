@@ -20,7 +20,7 @@
             c. html 에서 content를 tags로 보이게 바꿔줘
         -오류가 생기면 알려줘 */
 const getData = (txt1, content) => {
-const apikey ="3%2BE64HB9bUOY0%2BkENLpf5w9Uk98vLoG4XULi9AjodZWxJpAFaeggyJGYnMdjYepgzAO%2Bjv%2FAty5BZhgDBQfdyw%3D%3D";
+const apikey ="";
 const baseUrl ="https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?"
 let url=`${baseUrl}serviceKey=${apikey}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A`;
 url=`${url}&_type=json&keyword=${txt1.value}` ;
