@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 1. ?전 앤드포인트
     https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?
 2. a=b& 값을 묶은것
-    key=581023657f7becce67c0cf9e98272f98&
+    key=&
 3. targetDt 날짜요청
     targetDt=20250528 */
 
